@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
@@ -16,8 +17,30 @@ public class UIController : MonoBehaviour
             return instance;
         }
     }
+    [SerializeField] private GameObject failBackground;
+    [SerializeField] private GameObject successBackground;
+    [SerializeField]private TextMeshProUGUI levelText;
+    [SerializeField] private GameObject restartButton;
+    [SerializeField] private GameObject startFightButton;
+    [SerializeField] private GameObject successButton;
+    
+    private void ShowSuccessPanel()
+    {
 
-    public void ShowSuccessPanel()
+    }
+    public void ShowFailPanel()
+    {
+
+    }
+    public void ShowUIStart()
+    {
+
+    }
+    public void ShowUIInGame()
+    {
+
+    }
+    public void ShowUISuccess()
     {
 
     }
