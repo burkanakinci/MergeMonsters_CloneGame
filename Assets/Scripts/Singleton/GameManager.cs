@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public enum GameState
 {
@@ -33,7 +34,6 @@ public class GameManager : MonoBehaviour
     private int tempLevelObject;
     private void Awake()
     {
-
         levelStart += CleanSceneObject;
         levelStart += SpawnSceneObject;
 
@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-
         NextLevelOnGameManager();
     }
 
@@ -62,41 +61,41 @@ public class GameManager : MonoBehaviour
 
     private void CleanSceneObject()
     {
-
+        ObjectPool.Instance.CleanGridCell();
+        ObjectPool.Instance.CleanOpponent();
     }
     private void SpawnSceneObject()
     {
         GetLevelData();
 
-        PlayerController.Instance.SetNeededStack(currentLevelData.NeededStackCount);
-        upgradePrice = currentLevelData.StackUpgradePrice;
-
-        for (int i = (currentLevelData.GetDiamondPositionsCount) - 1; i >= 0; i--)
+        SpawnOpponentsOnGameManager();
+        SpawnGridCellOnGameManager();
+    }
+    private void SpawnOpponentsOnGameManager()
+    {
+        for (int i = currentLevelData.opponents.Count - 1; i >= 0; i--)
         {
-            ObjectPool.Instance.SpawnDiamond(currentLevelData.DiamondPosition(i));
+            ObjectPool.Instance.ResetOpponentCounter();
+            ObjectPool.Instance.SpawnOpponent(currentLevelData.opponentPoses[i], currentLevelData.opponents[i]);
         }
-        for (int j = (currentLevelData.GetGoldPositionsCount) - 1; j >= 0; j--)
+    }
+    private void SpawnGridCellOnGameManager()
+    {
+        for (int j = currentLevelData.playerGridPoses.Count - 1; j >= 0; j--)
         {
-            ObjectPool.Instance.SpawnMoney(currentLevelData.GoldPosition(j));
+            ObjectPool.Instance.SpawnGridCell(currentLevelData.playerGridPoses[j],
+                 new Vector3(currentLevelData.gridCellXScale, 1f, currentLevelData.gridCellZScale));
         }
-        for (int k = (currentLevelData.GetObstaclePositionsCount) - 1; k >= 0; k--)
-        {
-            ObjectPool.Instance.SpawnObstacle(currentLevelData.ObstaclePosition(k));
-        }
-        for (int l = (currentLevelData.PlatformCount) - 1; l >= 0; l--)
-        {
-            ObjectPool.Instance.SpawnPlatform();
-        }
-
-        finishTrigger.position = ((currentLevelData.PlatformCount) - 1) * (Vector3.forward * 10f);
-        ObjectPool.Instance.SetFinishCollectionAreaPosition(finishTrigger.position);
+    }
+    public void IncraceCurrencyAmountOnLevelStart(ref int _currencyAmount)
+    {
+        _currencyAmount += currentLevelData.levelCoinCount;
     }
     private void GetLevelData()
     {
         currentLevelData = null;
 
-        tempLevelObject = (levelNumber % maxLevelObject) > 0 ?
-            (levelNumber % maxLevelObject) : maxLevelObject;
+        tempLevelObject = (levelNumber % maxLevelObject) > 0 ? (levelNumber % maxLevelObject) : maxLevelObject;
 
         currentLevelData = Resources.Load<LevelData>("LevelScriptableObjects/Level" + tempLevelObject);
     }

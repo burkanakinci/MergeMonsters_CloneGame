@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b2a02323cc25744896b40eebdab631, type: 3}
+  m_Name: Level4
+  m_EditorClassIdentifier: 
+  opponentPoses:
+  - {x: -1.75, y: 0, z: 2.394763}
+  - {x: 1.75, y: 0, z: 2.394763}
+  - {x: -1.75, y: 0, z: 3.2280965}
+  - {x: 1.75, y: 0, z: 3.2280965}
+  - {x: -1.75, y: 0, z: 4.0614295}
+  - {x: 1.75, y: 0, z: 4.0614295}
+  opponents:
+  - {fileID: 7115529181779432201, guid: ac2b49b82e54f3f448bab29f161e9da5, type: 3}
+  - {fileID: 6487246973375344675, guid: 3e9a8236898f1f74b8ca63e39ab3bb38, type: 3}
+  - {fileID: 6487246973375344675, guid: 3e9a8236898f1f74b8ca63e39ab3bb38, type: 3}
+  - {fileID: 7115529181779432201, guid: ac2b49b82e54f3f448bab29f161e9da5, type: 3}
+  - {fileID: 6487246973375344675, guid: 3e9a8236898f1f74b8ca63e39ab3bb38, type: 3}
+  - {fileID: 7115529181779432201, guid: ac2b49b82e54f3f448bab29f161e9da5, type: 3}
+  playerGridPoses:
+  - {x: -3.5, y: 0, z: -4.5}
+  - {x: 0, y: 0, z: -4.5}
+  - {x: -3.5, y: 0, z: -3.6666667}
+  - {x: 0, y: 0, z: -3.6666667}
+  - {x: -3.5, y: 0, z: -2.8333335}
+  - {x: 0, y: 0, z: -2.8333335}
+  levelCoinCount: 600
+  gridCellXScale: 3.5
+  gridCellZScale: 0.8333333

@@ -1,57 +1,93 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class DragController : MonoBehaviour
 {
-    [SerializeField] private Transform draggedTransform;
+    private MergeController mergeController;
     private RaycastHit hit;
     private Ray ray;
-    private float screenWidth, changeOfMousePos, horizontalMovementChange;
-    private Vector3 firstMousePos;
-    [SerializeField] private float horizontalSpeed = 8f;
+    [SerializeField] private Transform dragParent;
+    private bool isDragging;
     private void Start()
     {
-        screenWidth = Screen.width;
+        isDragging = false;
 
-        draggedTransform = null;
+        mergeController = GetComponent<MergeController>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) &&
+        !EventSystem.current.IsPointerOverGameObject())
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            mergeController.clickDownGrid = null;
+            mergeController.clickUpGrid = null;
 
-            if (Physics.Raycast(ray, out hit))
+            ClickedOnGrid();
+
+            isDragging = true;
+        }
+        if (Input.GetKey(KeyCode.Mouse0) && isDragging)
+        {
+            DraggedOnGrid();
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0) && isDragging)
+        {
+            ClickUpOnGrid();
+
+            isDragging = false;
+        }
+    }
+    private void ClickedOnGrid()
+    {
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit) &&
+            hit.collider.CompareTag("GridCell"))
+        {
+            dragParent.position = hit.point;
+
+            mergeController.clickDownGrid =
+                ObjectPool.Instance.GetClickedGrid(hit.transform);
+
+            for (int i = mergeController.clickDownGrid.soldiersOnGrid.Count - 1; i >= 0; i--)
             {
-                draggedTransform = hit.transform;
+                mergeController.clickDownGrid.soldiersOnGrid[i].transform.SetParent(dragParent);
+
+                mergeController.clickDownGrid.soldiersOnGrid[i].PlayJumpAnimation();
+
+                mergeController.clickDownGrid.soldiersOnGrid[i].transform.
+                    DOLocalJump(mergeController.clickDownGrid.soldiersOnGrid[i].transform.localPosition + Vector3.up * 1f, 1f, 1, 0.7f);
             }
         }
-        if (Input.GetMouseButton(0))
+
+    }
+    private void DraggedOnGrid()
+    {
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
         {
-            horizontalMovementChange = 0;
-
-            changeOfMousePos = Input.mousePosition.x - firstMousePos.x;
-            if (Mathf.Abs(changeOfMousePos) > 0.1f)
-            {
-
-                horizontalMovementChange = (changeOfMousePos * 1 / screenWidth);
-                firstMousePos = Input.mousePosition;
-            }
-
-            draggedTransform.localPosition = new Vector3(
-
-                Mathf.Lerp(draggedTransform.localPosition.x, draggedTransform.localPosition.x + (horizontalMovementChange), horizontalSpeed * Time.fixedDeltaTime),
-                draggedTransform.localPosition.y,
-                draggedTransform.localPosition.z);
+            dragParent.position = hit.point;
         }
-        if (Input.GetKeyUp(KeyCode.Mouse0) && draggedTransform != null)
+    }
+    private void ClickUpOnGrid()
+    {
+        if (Physics.Raycast(dragParent.position + Vector3.up * 2f,
+                    (-transform.up),
+                    out hit,
+                    10f) &&
+            hit.collider.CompareTag("GridCell"))
         {
-            horizontalMovementChange = 0;
-            firstMousePos = Input.mousePosition;
+            mergeController.clickUpGrid =
+                ObjectPool.Instance.GetClickedGrid(hit.transform);
 
-            draggedTransform = null;
+            mergeController.MergeSoldiers();
+        }
+        else
+        {
+            mergeController.ClickGridBackPlacement();
         }
     }
 }

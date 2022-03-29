@@ -8,7 +8,7 @@ using UnityEditor;
 [CustomEditor(typeof(LevelCreator))]
 public class LevelCreatorEditor : Editor
 {
-    
+
 
     public override void OnInspectorGUI()
     {
@@ -16,12 +16,12 @@ public class LevelCreatorEditor : Editor
 
         LevelCreator levelCreator = (LevelCreator)target;
 
-        GUILayout.Space(10f);
+        GUILayout.Space(25f);
 
         EditorGUI.BeginChangeCheck();
 
         GUILayout.Label("Grid Cell Width Count");
-        levelCreator.gridCellXCount = EditorGUILayout.IntSlider(levelCreator.gridCellXCount,1,10);
+        levelCreator.gridCellXCount = EditorGUILayout.IntSlider(levelCreator.gridCellXCount, 1, 10);
         GUILayout.Label("Grid Cell Height Count");
         levelCreator.gridCellZCount = EditorGUILayout.IntSlider(levelCreator.gridCellZCount, 1, 10);
 
@@ -33,10 +33,14 @@ public class LevelCreatorEditor : Editor
         GUILayout.Label("Number Of Level To Be Created");
         levelCreator.createdLevelNumber = EditorGUILayout.IntField("Number Of Level", levelCreator.createdLevelNumber);
 
-        GUILayout.Label("Count Of Coins To Be Added At The Start Of The Level");
-        levelCreator.levelCoin= EditorGUILayout.IntField("Count Of Coin", levelCreator.levelCoin);
+        GUILayout.Space(25f);
 
-        if(GUILayout.Button("CreateLevel"))
+        GUILayout.Label("Count Of Coins To Be Added At The Start Of The Level");
+        levelCreator.levelCoin = EditorGUILayout.IntField("Count Of Coin", levelCreator.levelCoin);
+
+        GUILayout.Space(25f);
+
+        if (GUILayout.Button("CreateLevel"))
         {
             levelCreator.CreateLevel();
         }

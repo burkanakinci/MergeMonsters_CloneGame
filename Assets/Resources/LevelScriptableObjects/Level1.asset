@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b2a02323cc25744896b40eebdab631, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  opponentPoses:
+  - {x: -1.75, y: 0, z: 2.6030962}
+  - {x: 1.75, y: 0, z: 2.6030962}
+  - {x: -1.75, y: 0, z: 3.8530962}
+  - {x: 1.75, y: 0, z: 3.8530962}
+  opponents:
+  - {fileID: 7115529181779432201, guid: ac2b49b82e54f3f448bab29f161e9da5, type: 3}
+  - {fileID: 7115529181779432201, guid: ac2b49b82e54f3f448bab29f161e9da5, type: 3}
+  - {fileID: 7115529181779432201, guid: ac2b49b82e54f3f448bab29f161e9da5, type: 3}
+  - {fileID: 7115529181779432201, guid: ac2b49b82e54f3f448bab29f161e9da5, type: 3}
+  playerGridPoses:
+  - {x: -3.5, y: 0, z: -4.5}
+  - {x: 0, y: 0, z: -4.5}
+  - {x: -3.5, y: 0, z: -3.25}
+  - {x: 0, y: 0, z: -3.25}
+  levelCoinCount: 100
+  gridCellXScale: 3.5
+  gridCellZScale: 1.25

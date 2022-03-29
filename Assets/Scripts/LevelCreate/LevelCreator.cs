@@ -4,12 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 public class LevelCreator : MonoBehaviour
 {
     [SerializeField] private GameObject gridCellPrefab;
     private GameObject tempGridCell;
-
+    [SerializeField] private OpponentController[] opponents;
     [HideInInspector] public int gridCellXCount = 1, gridCellZCount = 1;
 
     [SerializeField]
@@ -26,12 +27,13 @@ public class LevelCreator : MonoBehaviour
 
     [HideInInspector] public int createdLevelNumber;
     [HideInInspector] public int levelCoin;
-
     private LevelData tempLevelData;
     private string savePath;
-
+    public int[] opponentLevels;
     public void SpawnGridCell()
     {
+        opponentLevels = new int[gridCellXCount * gridCellZCount];
+
         for (int k = gridCellParentActive.childCount - 1; k >= 0; k--)
         {
             gridCellParentActive.GetChild(k).gameObject.SetActive(false);
@@ -100,13 +102,32 @@ public class LevelCreator : MonoBehaviour
 
         savePath = AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/LevelScriptableObjects/Level" + createdLevelNumber + ".asset");
 
+        tempLevelData.playerGridPoses = new List<Vector3>();
+        for (int i = 0; i < gridCellParentActive.childCount; i++)
+        {
+            tempLevelData.playerGridPoses.Add(gridCellParentActive.GetChild(i).transform.position);
+        }
+
+        tempLevelData.opponents = new List<OpponentController>();
+        tempLevelData.opponentPoses = new List<Vector3>();
+        for (int j = 0; j < gridCellParentOpponent.childCount; j++)
+        {
+            tempLevelData.opponentPoses.Add(new Vector3(gridCellParentOpponent.GetChild(j).transform.position.x + gridCellXScale / 2f,
+            gridCellParentOpponent.GetChild(j).transform.position.y,
+                gridCellParentOpponent.GetChild(j).transform.position.z + gridCellZScale / 2f));
+
+            tempLevelData.opponents.Add(opponents[(opponentLevels[j]) - 1]);
+        }
 
         tempLevelData.levelCoinCount = levelCoin;
 
+        tempLevelData.gridCellXScale = gridCellXScale;
+        tempLevelData.gridCellZScale = gridCellZScale;
+
         AssetDatabase.CreateAsset(tempLevelData, savePath);
         AssetDatabase.SaveAssets();
+
+
     }
-
 }
-
 //#endif
