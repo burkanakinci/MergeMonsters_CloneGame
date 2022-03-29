@@ -9,6 +9,7 @@ public class OpponentController : MonoBehaviour
     private int targetLevel;
     private bool running;
     private Animator opponentAnimator;
+    [SerializeField] private ParticleSystem deathParticle, runParticle;
     private void Start()
     {
         opponentAnimator = GetComponent<Animator>();
@@ -17,16 +18,26 @@ public class OpponentController : MonoBehaviour
     {
         running = true;
     }
+    public void PlayDeathParticle()
+    {
+        deathParticle.Play();
+    }
+    public void PlayRunParticle()
+    {
+        runParticle.Play();
+    }
     public int GetOpponentLevel()
     {
         return opponentLevel;
     }
     public void PlayRunOpponent()
     {
+        PlayRunParticle();
         opponentAnimator.Play("Running", 0, 0.0f);
     }
     public void PlayDeathOpponent()
     {
+        PlayDeathParticle();
         opponentAnimator.SetBool("Death", true);
     }
     public void PlayFightOpponent()

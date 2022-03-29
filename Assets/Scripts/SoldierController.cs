@@ -6,11 +6,24 @@ public class SoldierController : MonoBehaviour
 {
     [SerializeField] private int soldierLevel;
     [SerializeField] private int soldierSpawnPrice;
+    [SerializeField] private ParticleSystem spawnParticle, runParticle;
     private Animator soldierAnimator;
 
     private void Start()
     {
         soldierAnimator = GetComponent<Animator>();
+    }
+    private void OnEnable()
+    {
+        PlaySapawnParticle();
+    }
+    public void PlayRunParticle()
+    {
+        runParticle.Play();
+    }
+    public void PlaySapawnParticle()
+    {
+        spawnParticle.Play();
     }
     public int GetSoldierLevel()
     {
@@ -39,6 +52,7 @@ public class SoldierController : MonoBehaviour
     }
     public void PlayRunAnimation()
     {
+        PlayRunParticle();
         soldierAnimator.Play("Running", 0, 0.0f);
     }
     public void PlayIdleAnimation()

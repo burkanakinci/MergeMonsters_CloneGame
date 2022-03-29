@@ -19,11 +19,14 @@ public class UIController : MonoBehaviour
     }
     [SerializeField] private GameObject failBackground;
     [SerializeField] private GameObject successBackground;
-    [SerializeField]private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private GameObject restartButton;
+    [SerializeField] private GameObject startArea;
     [SerializeField] private GameObject startFightButton;
+    [SerializeField] private GameObject currentAmount;
+    [SerializeField] private TextMeshPro currentAmountText;
     [SerializeField] private GameObject successButton;
-    
+
     private void ShowSuccessPanel()
     {
 
@@ -41,6 +44,14 @@ public class UIController : MonoBehaviour
 
     }
     public void ShowUISuccess()
+    {
+
+    }
+    public void ShowLevel()
+    {
+
+    }
+    public void ShowCurrentAmount()
     {
 
     }

@@ -2413,11 +2413,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca440847946cc4d4abff7968748cd4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failBackground: {fileID: 0}
-  successBackground: {fileID: 0}
-  levelText: {fileID: 0}
-  restartButton: {fileID: 0}
+  failBackground: {fileID: 1871547865}
+  successBackground: {fileID: 1087873528}
+  levelText: {fileID: 1250164545}
+  restartButton: {fileID: 136890061}
+  startArea: {fileID: 903996054}
   startFightButton: {fileID: 0}
+  currentAmount: {fileID: 0}
+  currentAmountText: {fileID: 0}
   successButton: {fileID: 0}
 --- !u!1 &1161444235
 GameObject:
