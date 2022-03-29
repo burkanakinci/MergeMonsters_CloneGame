@@ -19,6 +19,12 @@ public class UIController : MonoBehaviour
 
     public void ShowSuccessPanel()
     {
-        
+
+    }
+    public void StartWarButton()
+    {
+        GameManager.Instance.SetGameState(GameState.Fight);
+
+        ObjectPool.Instance.OpponentStartWar();
     }
 }

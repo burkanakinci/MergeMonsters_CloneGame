@@ -23,6 +23,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private OpponentController[] opponentPrefabs;
     [SerializeField] private Transform opponentParentActive, opponentParentInactive;
     private List<OpponentController> opponentPool = new List<OpponentController>();
+    private List<OpponentController> opponentInScene = new List<OpponentController>();
     [SerializeField] private SoldierController[] soldierPrefabs;
     [SerializeField] private Transform soldierParentActive, soldierParentInactive;
     private List<SoldierController> soldierPool = new List<SoldierController>();
@@ -61,6 +62,7 @@ public class ObjectPool : MonoBehaviour
                     opponentPool[i].transform.position = _spawnPos - (Vector3.right * 0.6f) + (Vector3.right * 1.2f * opponentCounter);
                     opponentPool[i].transform.eulerAngles = new Vector3(0f, 180f, 0f);
                     opponentPool[i].transform.SetParent(opponentParentActive);
+                    opponentInScene.Add(opponentPool[i]);
                     opponentPool.Remove(opponentPool[i]);
 
                     opponentCounter++;
@@ -78,10 +80,10 @@ public class ObjectPool : MonoBehaviour
         {
             if (_opponent.GetOpponentLevel() == opponentPrefabs[j].GetOpponentLevel())
             {
-                Instantiate(opponentPrefabs[j],
+                opponentInScene.Add(Instantiate(opponentPrefabs[j],
                         (_spawnPos - (Vector3.right * 0.6f) + (Vector3.right * 1.2f * opponentCounter)),
                         Quaternion.Euler(0f, 180f, 0f),
-                        opponentParentActive);
+                        opponentParentActive));
 
                 opponentCounter++;
 
@@ -254,5 +256,12 @@ public class ObjectPool : MonoBehaviour
     public Transform GetSoldierParentInactive()
     {
         return soldierParentInactive;
+    }
+    public void OpponentStartWar()
+    {
+        for (int i = opponentInScene.Count - 1; i >= 0; i--)
+        {
+            opponentInScene[i].FindTarget();
+        }
     }
 }

@@ -1,119 +1,341 @@
 fileFormatVersion: 2
 guid: fc83b7bf7e956a141920a579a8b82a2f
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: f_index.01.L
-    100002: f_index.01.R
-    100004: f_index.02.L
-    100006: f_index.02.R
-    100008: f_middle.01.L
-    100010: f_middle.01.R
-    100012: f_middle.02.L
-    100014: f_middle.02.R
-    100016: f_pinky.01.L
-    100018: f_pinky.01.R
-    100020: f_pinky.02.L
-    100022: f_pinky.02.R
-    100024: f_ring.01.L
-    100026: f_ring.01.R
-    100028: f_ring.02.L
-    100030: f_ring.02.R
-    100032: face
-    100034: foot.L
-    100036: foot.R
-    100038: forearm.L
-    100040: forearm.R
-    100042: hand.L
-    100044: hand.R
-    100046: metarig
-    100048: Root
-    100050: shin.L
-    100052: shin.R
-    100054: shoulder.L
-    100056: shoulder.R
-    100058: spine
-    100060: spine.001
-    100062: spine.002
-    100064: spine.003
-    100066: spine.004
-    100068: Stickman
-    100070: //RootNode
-    100072: thigh.L
-    100074: thigh.R
-    100076: thumb.01.L
-    100078: thumb.01.R
-    100080: thumb.02.L
-    100082: thumb.02.R
-    100084: toe.L
-    100086: toe.R
-    100088: upper_arm.L
-    100090: upper_arm.R
-    400000: f_index.01.L
-    400002: f_index.01.R
-    400004: f_index.02.L
-    400006: f_index.02.R
-    400008: f_middle.01.L
-    400010: f_middle.01.R
-    400012: f_middle.02.L
-    400014: f_middle.02.R
-    400016: f_pinky.01.L
-    400018: f_pinky.01.R
-    400020: f_pinky.02.L
-    400022: f_pinky.02.R
-    400024: f_ring.01.L
-    400026: f_ring.01.R
-    400028: f_ring.02.L
-    400030: f_ring.02.R
-    400032: face
-    400034: foot.L
-    400036: foot.R
-    400038: forearm.L
-    400040: forearm.R
-    400042: hand.L
-    400044: hand.R
-    400046: metarig
-    400048: Root
-    400050: shin.L
-    400052: shin.R
-    400054: shoulder.L
-    400056: shoulder.R
-    400058: spine
-    400060: spine.001
-    400062: spine.002
-    400064: spine.003
-    400066: spine.004
-    400068: Stickman
-    400070: //RootNode
-    400072: thigh.L
-    400074: thigh.R
-    400076: thumb.01.L
-    400078: thumb.01.R
-    400080: thumb.02.L
-    400082: thumb.02.R
-    400084: toe.L
-    400086: toe.R
-    400088: upper_arm.L
-    400090: upper_arm.R
-    2100000: Sombrero
-    4300000: Stickman
-    7400000: metarig|Death
-    7400002: metarig|Hit
-    7400004: metarig|Idle
-    7400006: metarig|Idle_Hello
-    7400008: metarig|Jump
-    7400010: metarig|Jump_Forward
-    7400012: metarig|Punch
-    7400014: metarig|Run
-    7400016: metarig|Run_Jump
-    7400018: metarig|Run_Jump_RM
-    7400020: metarig|Run_RM
-    7400022: metarig|T-Pose
-    7400024: metarig|Walk
-    7400026: metarig|Walk_RM
-    9500000: //RootNode
-    13700000: Stickman
-    2186277476908879412: ImportLogs
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: f_index.01.L
+  - first:
+      1: 100002
+    second: f_index.01.R
+  - first:
+      1: 100004
+    second: f_index.02.L
+  - first:
+      1: 100006
+    second: f_index.02.R
+  - first:
+      1: 100008
+    second: f_middle.01.L
+  - first:
+      1: 100010
+    second: f_middle.01.R
+  - first:
+      1: 100012
+    second: f_middle.02.L
+  - first:
+      1: 100014
+    second: f_middle.02.R
+  - first:
+      1: 100016
+    second: f_pinky.01.L
+  - first:
+      1: 100018
+    second: f_pinky.01.R
+  - first:
+      1: 100020
+    second: f_pinky.02.L
+  - first:
+      1: 100022
+    second: f_pinky.02.R
+  - first:
+      1: 100024
+    second: f_ring.01.L
+  - first:
+      1: 100026
+    second: f_ring.01.R
+  - first:
+      1: 100028
+    second: f_ring.02.L
+  - first:
+      1: 100030
+    second: f_ring.02.R
+  - first:
+      1: 100032
+    second: face
+  - first:
+      1: 100034
+    second: foot.L
+  - first:
+      1: 100036
+    second: foot.R
+  - first:
+      1: 100038
+    second: forearm.L
+  - first:
+      1: 100040
+    second: forearm.R
+  - first:
+      1: 100042
+    second: hand.L
+  - first:
+      1: 100044
+    second: hand.R
+  - first:
+      1: 100046
+    second: metarig
+  - first:
+      1: 100048
+    second: Root
+  - first:
+      1: 100050
+    second: shin.L
+  - first:
+      1: 100052
+    second: shin.R
+  - first:
+      1: 100054
+    second: shoulder.L
+  - first:
+      1: 100056
+    second: shoulder.R
+  - first:
+      1: 100058
+    second: spine
+  - first:
+      1: 100060
+    second: spine.001
+  - first:
+      1: 100062
+    second: spine.002
+  - first:
+      1: 100064
+    second: spine.003
+  - first:
+      1: 100066
+    second: spine.004
+  - first:
+      1: 100068
+    second: Stickman
+  - first:
+      1: 100070
+    second: //RootNode
+  - first:
+      1: 100072
+    second: thigh.L
+  - first:
+      1: 100074
+    second: thigh.R
+  - first:
+      1: 100076
+    second: thumb.01.L
+  - first:
+      1: 100078
+    second: thumb.01.R
+  - first:
+      1: 100080
+    second: thumb.02.L
+  - first:
+      1: 100082
+    second: thumb.02.R
+  - first:
+      1: 100084
+    second: toe.L
+  - first:
+      1: 100086
+    second: toe.R
+  - first:
+      1: 100088
+    second: upper_arm.L
+  - first:
+      1: 100090
+    second: upper_arm.R
+  - first:
+      4: 400000
+    second: f_index.01.L
+  - first:
+      4: 400002
+    second: f_index.01.R
+  - first:
+      4: 400004
+    second: f_index.02.L
+  - first:
+      4: 400006
+    second: f_index.02.R
+  - first:
+      4: 400008
+    second: f_middle.01.L
+  - first:
+      4: 400010
+    second: f_middle.01.R
+  - first:
+      4: 400012
+    second: f_middle.02.L
+  - first:
+      4: 400014
+    second: f_middle.02.R
+  - first:
+      4: 400016
+    second: f_pinky.01.L
+  - first:
+      4: 400018
+    second: f_pinky.01.R
+  - first:
+      4: 400020
+    second: f_pinky.02.L
+  - first:
+      4: 400022
+    second: f_pinky.02.R
+  - first:
+      4: 400024
+    second: f_ring.01.L
+  - first:
+      4: 400026
+    second: f_ring.01.R
+  - first:
+      4: 400028
+    second: f_ring.02.L
+  - first:
+      4: 400030
+    second: f_ring.02.R
+  - first:
+      4: 400032
+    second: face
+  - first:
+      4: 400034
+    second: foot.L
+  - first:
+      4: 400036
+    second: foot.R
+  - first:
+      4: 400038
+    second: forearm.L
+  - first:
+      4: 400040
+    second: forearm.R
+  - first:
+      4: 400042
+    second: hand.L
+  - first:
+      4: 400044
+    second: hand.R
+  - first:
+      4: 400046
+    second: metarig
+  - first:
+      4: 400048
+    second: Root
+  - first:
+      4: 400050
+    second: shin.L
+  - first:
+      4: 400052
+    second: shin.R
+  - first:
+      4: 400054
+    second: shoulder.L
+  - first:
+      4: 400056
+    second: shoulder.R
+  - first:
+      4: 400058
+    second: spine
+  - first:
+      4: 400060
+    second: spine.001
+  - first:
+      4: 400062
+    second: spine.002
+  - first:
+      4: 400064
+    second: spine.003
+  - first:
+      4: 400066
+    second: spine.004
+  - first:
+      4: 400068
+    second: Stickman
+  - first:
+      4: 400070
+    second: //RootNode
+  - first:
+      4: 400072
+    second: thigh.L
+  - first:
+      4: 400074
+    second: thigh.R
+  - first:
+      4: 400076
+    second: thumb.01.L
+  - first:
+      4: 400078
+    second: thumb.01.R
+  - first:
+      4: 400080
+    second: thumb.02.L
+  - first:
+      4: 400082
+    second: thumb.02.R
+  - first:
+      4: 400084
+    second: toe.L
+  - first:
+      4: 400086
+    second: toe.R
+  - first:
+      4: 400088
+    second: upper_arm.L
+  - first:
+      4: 400090
+    second: upper_arm.R
+  - first:
+      21: 2100000
+    second: Sombrero
+  - first:
+      43: 4300000
+    second: Stickman
+  - first:
+      74: 7400000
+    second: metarig|Death
+  - first:
+      74: 7400002
+    second: metarig|Hit
+  - first:
+      74: 7400004
+    second: metarig|Idle
+  - first:
+      74: 7400006
+    second: metarig|Idle_Hello
+  - first:
+      74: 7400008
+    second: metarig|Jump
+  - first:
+      74: 7400010
+    second: metarig|Jump_Forward
+  - first:
+      74: 7400012
+    second: metarig|Punch
+  - first:
+      74: 7400014
+    second: metarig|Run
+  - first:
+      74: 7400016
+    second: metarig|Run_Jump
+  - first:
+      74: 7400018
+    second: metarig|Run_Jump_RM
+  - first:
+      74: 7400020
+    second: metarig|Run_RM
+  - first:
+      74: 7400022
+    second: metarig|T-Pose
+  - first:
+      74: 7400024
+    second: metarig|Walk
+  - first:
+      74: 7400026
+    second: metarig|Walk_RM
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Stickman
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -121,7 +343,7 @@ ModelImporter:
       name: Sombrero
     second: {fileID: 2100000, guid: 21dd8b5fd1b56c840858b652d0f222e2, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -151,7 +373,413 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: metarig|Death
+      takeName: metarig|Death
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Hit
+      takeName: metarig|Hit
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Idle
+      takeName: metarig|Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Idle_Hello
+      takeName: metarig|Idle_Hello
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Jump
+      takeName: metarig|Jump
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Jump_Forward
+      takeName: metarig|Jump_Forward
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Punch
+      takeName: metarig|Punch
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Run
+      takeName: metarig|Run
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Run_Jump
+      takeName: metarig|Run_Jump
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Run_Jump_RM
+      takeName: metarig|Run_Jump_RM
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Run_RM
+      takeName: metarig|Run_RM
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|T-Pose
+      takeName: metarig|T-Pose
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Walk
+      takeName: metarig|Walk
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Walk_RM
+      takeName: metarig|Walk_RM
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -159,25 +787,32 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -186,10 +821,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: spine
       humanName: Hips
@@ -765,13 +1400,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

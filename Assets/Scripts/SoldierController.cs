@@ -41,4 +41,10 @@ public class SoldierController : MonoBehaviour
     {
         soldierAnimator.Play("Running", 0, 0.0f);
     }
+    public void PlayIdleAnimation()
+    {
+        soldierAnimator.SetBool("Death", false);
+        soldierAnimator.SetBool("Fight", false);
+        soldierAnimator.Play("Idle", 0, 0.0f);
+    }
 }
