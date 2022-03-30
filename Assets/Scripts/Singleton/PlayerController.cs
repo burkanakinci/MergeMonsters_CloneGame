@@ -23,15 +23,10 @@ public class PlayerController : MonoBehaviour
         instance = this;
 
         currencyAmount = SaveSystem.LoadCurrencyAmount();
-        GameManager.Instance.levelStart += IncreaseCurrencyAmount;
     }
     public int GetCurrencyAmount()
     {
         return currencyAmount;
-    }
-    private void IncreaseCurrencyAmount()
-    {
-        GameManager.Instance.IncraceCurrencyAmountOnLevelStart(ref currencyAmount);
     }
     public void DecreaseCurrencyAmount(int _price)
     {

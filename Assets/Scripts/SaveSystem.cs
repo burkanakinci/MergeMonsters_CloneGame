@@ -9,7 +9,7 @@ public static class SaveSystem
     public static void SaveLastLevelNum(int levelNum)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/lastlevelnum" + "." + extensionName;Debug.Log(path);
+        string path = Application.persistentDataPath + "/lastlevelnum" + "." + extensionName;//Debug.Log(path);
         FileStream stream = new FileStream(path, FileMode.Create);
         formatter.Serialize(stream, levelNum);
         stream.Close();
@@ -18,7 +18,7 @@ public static class SaveSystem
     public static int LoadLastLevelNum()
     {
         int _tempLevelNumber = 1;
-        string path = Application.persistentDataPath + "/lastlevelnum" + "." + extensionName;//Debug.Log(path);
+        string path = Application.persistentDataPath + "/lastlevelnum" + "." + extensionName;Debug.Log(path);
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

@@ -15,6 +15,8 @@ public class SpawnSoldierController : MonoBehaviour
             ObjectPool.Instance.ResetSoldierCounter();
 
             ObjectPool.Instance.SpawnSoldier(ObjectPool.Instance.GetEmptyGridPos(), _soldierLevel);
+
+            UIController.Instance.ShowCurrentAmount();
         }
     }
 }

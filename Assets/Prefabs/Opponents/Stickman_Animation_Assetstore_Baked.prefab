@@ -1614,6 +1614,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathNormal
       objectReference: {fileID: 0}
+    - target: {fileID: 547665418997025734, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547760881978186676, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547898325266086664, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547908469979599450, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548214601071020690, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548243998666214638, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568772662261716674, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c518b0e1b5510941826557a4b38e541, type: 3}
 --- !u!4 &2298114322733053081 stripped
@@ -1633,6 +1661,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6079512240828782464}
     m_Modifications:
+    - target: {fileID: 2634804129453690757, guid: f6a950c86cedc394f8995c364d101200, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2756886192143974305, guid: f6a950c86cedc394f8995c364d101200, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1680,6 +1712,26 @@ PrefabInstance:
     - target: {fileID: 2762076711508222931, guid: f6a950c86cedc394f8995c364d101200, type: 3}
       propertyPath: m_Name
       value: SurfaceImpactDirt
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768550431189574399, guid: f6a950c86cedc394f8995c364d101200, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768726371510327035, guid: f6a950c86cedc394f8995c364d101200, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778458044653666425, guid: f6a950c86cedc394f8995c364d101200, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778596408331646709, guid: f6a950c86cedc394f8995c364d101200, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778967482279162773, guid: f6a950c86cedc394f8995c364d101200, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6a950c86cedc394f8995c364d101200, type: 3}

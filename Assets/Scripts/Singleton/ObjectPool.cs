@@ -144,11 +144,29 @@ public class ObjectPool : MonoBehaviour
     }
     public void CleanGridCell()
     {
+        for (int i = gridCellOnScene.Count - 1; i >= 0; i--)
+        {
+            for (int j = gridCellOnScene[i].soldiersOnGrid.Count - 1; j >= 0; j--)
+            {
+                soldierPool.Add(gridCellOnScene[i].soldiersOnGrid[j]);
+                gridCellOnScene[i].soldiersOnGrid[j].transform.SetParent(soldierParentInactive);
+            }
+            gridCellOnScene[i].soldiersOnGrid.Clear();
+            gridCellPool.Add(gridCellOnScene[i]);
+            gridCellOnScene[i].gameObject.SetActive(false);
+        }
 
+        gridCellOnScene.Clear();
     }
     public void CleanOpponent()
     {
-
+        for (int i = opponentInScene.Count - 1; i >= 0; i--)
+        {
+            opponentPool.Add(opponentInScene[i]);
+            opponentInScene[i].transform.SetParent(opponentParentInactive);
+            opponentInScene[i].gameObject.SetActive(false);
+        }
+        opponentInScene.Clear();
     }
     public void AddSoldierPool(SoldierController _soldier)
     {
@@ -263,5 +281,20 @@ public class ObjectPool : MonoBehaviour
         {
             opponentInScene[i].FindTarget();
         }
+    }
+    public bool AllOpponentsDead()
+    {
+        for (int i = opponentInScene.Count - 1; i >= 0; i--)
+        {
+            if (!opponentInScene[i].GetIsDead())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public void ShowGridCell()
+    {
+        gridCellParent.gameObject.SetActive(GameManager.Instance.GetGameState() == GameState.Start);
     }
 }

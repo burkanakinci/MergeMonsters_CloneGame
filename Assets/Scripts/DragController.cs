@@ -20,25 +20,28 @@ public class DragController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) &&
+        if (GameManager.Instance.GetGameState() == GameState.Start)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0) &&
         !EventSystem.current.IsPointerOverGameObject())
-        {
-            mergeController.clickDownGrid = null;
-            mergeController.clickUpGrid = null;
+            {
+                mergeController.clickDownGrid = null;
+                mergeController.clickUpGrid = null;
 
-            ClickedOnGrid();
+                ClickedOnGrid();
 
-            isDragging = true;
-        }
-        if (Input.GetKey(KeyCode.Mouse0) && isDragging)
-        {
-            DraggedOnGrid();
-        }
-        if (Input.GetKeyUp(KeyCode.Mouse0) && isDragging)
-        {
-            ClickUpOnGrid();
+                isDragging = true;
+            }
+            if (Input.GetKey(KeyCode.Mouse0) && isDragging)
+            {
+                DraggedOnGrid();
+            }
+            if (Input.GetKeyUp(KeyCode.Mouse0) && isDragging)
+            {
+                ClickUpOnGrid();
 
-            isDragging = false;
+                isDragging = false;
+            }
         }
     }
     private void ClickedOnGrid()

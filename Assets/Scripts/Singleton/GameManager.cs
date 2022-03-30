@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private GameState gameState;
     public event Action levelStart;
     [SerializeField] private int maxLevelObject;
+    [SerializeField] private ParticleSystem[] successParticles;
     private int tempLevelObject;
     private void Awake()
     {
@@ -50,6 +51,14 @@ public class GameManager : MonoBehaviour
         NextLevelOnGameManager();
     }
 
+    public void PlaySuccessParticles()
+    {
+        for (int i = successParticles.Length - 1; i >= 0; i--)
+        {
+            successParticles[i].Play();
+        }
+    }
+
     public void NextLevelOnGameManager()
     {
         gameState = GameState.Start;
@@ -57,6 +66,8 @@ public class GameManager : MonoBehaviour
         levelNumber = SaveSystem.LoadLastLevelNum();
 
         levelStart?.Invoke();
+
+        
     }
 
     private void CleanSceneObject()
@@ -70,6 +81,8 @@ public class GameManager : MonoBehaviour
 
         SpawnOpponentsOnGameManager();
         SpawnGridCellOnGameManager();
+
+        ObjectPool.Instance.ShowGridCell();
     }
     private void SpawnOpponentsOnGameManager()
     {
@@ -87,10 +100,6 @@ public class GameManager : MonoBehaviour
                  new Vector3(currentLevelData.gridCellXScale, 1f, currentLevelData.gridCellZScale));
         }
     }
-    public void IncraceCurrencyAmountOnLevelStart(ref int _currencyAmount)
-    {
-        _currencyAmount += currentLevelData.levelCoinCount;
-    }
     private void GetLevelData()
     {
         currentLevelData = null;
@@ -98,6 +107,8 @@ public class GameManager : MonoBehaviour
         tempLevelObject = (levelNumber % maxLevelObject) > 0 ? (levelNumber % maxLevelObject) : maxLevelObject;
 
         currentLevelData = Resources.Load<LevelData>("LevelScriptableObjects/Level" + tempLevelObject);
+
+        SaveSystem.SaveCurrencyAmount(currentLevelData.levelCoinCount);
     }
     public void SetLevelData()
     {

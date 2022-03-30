@@ -9,6 +9,7 @@ public class OpponentController : MonoBehaviour
     private int targetLevel;
     private bool running;
     private Animator opponentAnimator;
+    private bool isDead;
     [SerializeField] private ParticleSystem deathParticle, runParticle;
     private void Start()
     {
@@ -16,6 +17,8 @@ public class OpponentController : MonoBehaviour
     }
     private void OnEnable()
     {
+        isDead = false;
+
         running = true;
     }
     public void PlayDeathParticle()
@@ -90,18 +93,28 @@ public class OpponentController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (opponentLevel > targetLevel)
         {
-            //targetı öldür 
             targetOnFight.PlayDeathAnimation();
-            //opponente yeni hedef bul yeniden koştur
             FindTarget();
         }
         else
         {
-            //target idle geçsin
             targetOnFight.PlayIdleAnimation();
-            //bu objeyi öldür 
             PlayDeathOpponent();
+            isDead = true;
         }
-        //success fail paneli kontrol et
+        StartCoroutine(CheckCompleteLevel());
+    }
+    private IEnumerator CheckCompleteLevel()
+    {
+        yield return new WaitForSeconds(1f);
+        if (ObjectPool.Instance.AllOpponentsDead())
+        {
+
+            UIController.Instance.ShowUISuccess();
+        }
+    }
+    public bool GetIsDead()
+    {
+        return isDead;
     }
 }
