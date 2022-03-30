@@ -111,6 +111,7 @@ public class OpponentController : MonoBehaviour
         {
 
             UIController.Instance.ShowUISuccess();
+            GameManager.Instance.PlaySuccessParticles();
         }
     }
     public bool GetIsDead()

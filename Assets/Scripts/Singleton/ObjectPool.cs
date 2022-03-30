@@ -144,12 +144,14 @@ public class ObjectPool : MonoBehaviour
     }
     public void CleanGridCell()
     {
+
         for (int i = gridCellOnScene.Count - 1; i >= 0; i--)
         {
             for (int j = gridCellOnScene[i].soldiersOnGrid.Count - 1; j >= 0; j--)
             {
                 soldierPool.Add(gridCellOnScene[i].soldiersOnGrid[j]);
                 gridCellOnScene[i].soldiersOnGrid[j].transform.SetParent(soldierParentInactive);
+                gridCellOnScene[i].soldiersOnGrid[j].gameObject.SetActive(false);
             }
             gridCellOnScene[i].soldiersOnGrid.Clear();
             gridCellPool.Add(gridCellOnScene[i]);

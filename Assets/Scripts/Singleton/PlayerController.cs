@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
 
-        currencyAmount = SaveSystem.LoadCurrencyAmount();
+        GameManager.Instance.levelStart += SetCurrencyData;
     }
     public int GetCurrencyAmount()
     {
@@ -31,5 +31,9 @@ public class PlayerController : MonoBehaviour
     public void DecreaseCurrencyAmount(int _price)
     {
         currencyAmount -= _price;
+    }
+    public void SetCurrencyData()
+    {
+        currencyAmount = SaveSystem.LoadCurrencyAmount();
     }
 }

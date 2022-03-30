@@ -66,8 +66,6 @@ public class GameManager : MonoBehaviour
         levelNumber = SaveSystem.LoadLastLevelNum();
 
         levelStart?.Invoke();
-
-        
     }
 
     private void CleanSceneObject()
@@ -109,6 +107,7 @@ public class GameManager : MonoBehaviour
         currentLevelData = Resources.Load<LevelData>("LevelScriptableObjects/Level" + tempLevelObject);
 
         SaveSystem.SaveCurrencyAmount(currentLevelData.levelCoinCount);
+        PlayerController.Instance.SetCurrencyData();
     }
     public void SetLevelData()
     {
